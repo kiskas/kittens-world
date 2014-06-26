@@ -1,172 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href=""/>
+    <title>Сайт о домашних кошках | Все о любимых котятах и кошках ^_^</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="favicon.png">
-
-    <title>Друзья наши меньшие ^_^</title>
-
+    <meta name="description" content="Сайт посвящен кошкам и котятам, как заботиться о кошках, как выбрать для себя котенка, ухаживание и покупка котенка или кошки. Все о кошках и котятах." />
+    <meta name="keywords" content="кошка, котята, выбор кошки, покупка кошки, уход за кошкой, ветеринар для кошки, породы кошек, статьи о кошках, о кошках, сайт о кошках, наши кошки, все о кошках и котятах" />
+    <link rel="shortcut icon" href="favicon.ico">
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/carousel.css" rel="stylesheet">
-	
+    <link rel="alternate" type="application/rss+xml" title="Все о любимых котятах и кошках ^_^feed.rss" href="feed.rss.html">
     <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-	
+    =================================================
+     Placed at the end of the document so the pages load faster -->
     <script src="scripts/lib/jquery-1.8.3.min.js"></script>
     <script src="scripts/lib/bootstrap.min.js"></script>
     <script src="scripts/lib/holder.js"></script>
-	
-  </head>
+    <link href="css/responsiveslides.css" rel="stylesheet">
+    <script src="scripts/lib/responsiveslides.min.js" type="text/javascript"></script>
+
+    <!--    <script src="scripts/user/calculator.js"></script>
+        <script src="scripts/user/main.js"></script>-->
+
+
+</head>
+
 <!-- NAVBAR
 ================================================== -->
 <body>
 <div class="wrapper content-inner">
-    <div class="content">
-		<nav class="navbar navbar-default container" role="navigation">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<a class="brand" href="#"><img src="./images/logo.png"></a>
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Меню</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-			</div>
+<div class="content">
+    <div class="menu-container">
+        <nav class="navbar navbar-default container" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="brand" href="/"><img src="images/logo.png" alt="Наши любимые кошки и котята" title="Наши любимые кошки и котята"></a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Меню</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav"><li >
+                    <a href="http://www.kittens-world.ru/" title="Добро пожаловать на наш сайт о кошках и котятах">Главная</a>
+                </li>
+                    <li >
+                        <a href="/gallery.html" title="Фотогалерея про кошек и котят">Фотогалерея</a>
+                    </li>
+                    <li  class="active">
+                        <a href="/articles.html" title="Интересные статьи про кошек">Статьи</a>
+                    </li>
+                    <li >
+                        <a href="/video.html" title="Забавные видеоролики с кошками (про кошек)">Видео</a>
+                    </li>
+                    <li  class="last">
+                        <a href="/faq.html" title="Вопрос-ответ FAQ">FAQ</a>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search" method="post" action="search-results.html" id="ajaxSearch_form">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-seach" name="search" placeholder="Поиск">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-search">Искать</button>
+                </form>
 
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Главная</a></li>
-					<li><a href="#">Статьи</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">О кошках <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Питание</a></li>
-							<li><a href="#">Поведение</a></li>
-						</ul>
-					</li>
-					<li><a href="#">FAQ</a></li>
-				</ul>
-				<form class="navbar-form navbar-left" role="search">
-					<div class="form-group">
-						<input type="text" class="form-control form-seach" placeholder="Поиск">
-					</div>
-					<button type="submit" class="btn btn-primary btn-search">Искать</button>
-				</form>
-			</div><!-- /.navbar-collapse -->
-		</nav>
 
-    </div> <!-- /.content -->
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </div>
+</div> <!-- /.content -->
 
     <div class="container marketing">
-        <h1>Статьи</h1>
-        <div class="bredcrams">
-            <a href="">Главная</a> \ <a href="">О кошках</a> \ Питание
-        </div>
-
+        <span class="B_crumbBox"><span class="B_firstCrumb"><a class="B_homeCrumb" href="/index.html" title="Сайт посвящен кошкам и котятам, как заботиться о кошках, как выбрать для себя котенка, ухаживание и покупка котенка или кошки. Все о кошках и котятах.">Главная</a></span> &raquo; <span class="B_lastCrumb"><span class="B_currentCrumb">Статьи</span></span></span>
+        <h1>Интересные статьи про кошек</h1>
         <div class="row">
             <div class="col-md-9">
-				<div class="article">
-				<h4>Почему кошки так любят спать?</h4>
-					<div class="col-md-3">
-						<p>
-							<img src="./images/icons.jpg">
-						</p>
-						<p>
-							<span class="calendar">12.12.2014</span>
-						</p>
-						<p>
-							<span class="autor">Админ Administration</span>
-						</p>
-						<p>
-							<span class="comments">6</span>
-						</p>
-					</div>
-					<div class="col-md-8">
-						<p>Aenean nonummy hendrerit mau phasellu porta. Fusce suscipit varius mi sed. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio morbi.</p>
-						<p> Ut viverra mauris justo, quis auctor nisi. Suspendisse sit amet diam diam, eget volutpat lacus. Vestibulum faucibus scelerisque nisl vitae scelerisque. Sed tristique metus eu quam viverra malesuada. Cras porta eros nec libero bibendum sed faucibus felis fringilla. Quisque sed odio neque. Mauris at nisl ac eros pretium hendrerit vitae et velit. Aliquam erat volutpat. Proin sit amet erat vel nisl consectetur auctor et at quam.</p>
-						<p>
-							<button class="btn btn-primary btn-sm" type="button">Далее »</button>
-						</p>
-					</div>
-					<hr>
-					<div class="information-articles">
-						<span class="tags">Питание, кошки, уход</span>
-					</div>
-				</div>
-				<div class="article">
-				<h4>Наши мохнатые друзья</h4>
-					<div class="col-md-3">
-						<p>
-							<img src="./images/icons.jpg">
-						</p>
-						<p>
-							<span class="calendar">12.12.2014</span>
-						</p>
-						<p>
-							<span class="autor">Админ Administration</span>
-						</p>
-						<p>
-							<span class="comments">6</span>
-						</p>
-					</div>
-					<div class="col-md-8">
-						<p>Aenean nonummy hendrerit mau phasellu porta. Fusce suscipit varius mi sed. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio morbi.</p>
-						<p> Ut viverra mauris justo, quis auctor nisi. Suspendisse sit amet diam diam, eget volutpat lacus. Vestibulum faucibus scelerisque nisl vitae scelerisque. Sed tristique metus eu quam viverra malesuada. Cras porta eros nec libero bibendum sed faucibus felis fringilla. Quisque sed odio neque. Mauris at nisl ac eros pretium hendrerit vitae et velit. Aliquam erat volutpat. Proin sit amet erat vel nisl consectetur auctor et at quam.</p>
-						<p>
-							<button class="btn btn-primary btn-sm" type="button">Далее »</button>
-						</p>
-					</div>
-					<hr>
-					<div class="information-articles">
-						<span class="tags">Питание, кошки, уход</span>
-					</div>
-				</div>
+                <div class="article">
+                    <h4>Кот или кошка</h4>
+                    <p>Выбирая домашнего питомца, вы должны решить, нужен ли вам кот или кошка. Коты вырастают более крупными. У взрослых котов часто образуются характерные «щеки». Кошки более привязчивы и ласковы. Впрочем, у кастрированных котов и кошек характер становится одинаково ровным.</p>
+                    <p>В данном разделе, мы разместим для вас, интересные статьи про кошек, чтобы вы смогли понять своих любимцев еще чуточку больше.</p>
+
+
+                    <a href="koshache-kafe.html"><h4>Кошачьи кафе для любителей кошек</h4></a>
+                    <div class="col-md-3">
+                        <p>
+                            <img src="http://cs620727.vk.me/v620727015/a86d/pLCZkf9WWDE.jpg" alt="Кошачьи кафе для любителей кошек" title="Кошачьи кафе для любителей кошек" class="img-thumbnail">
+                        </p>
+                        <p>
+                            <span class="autor">Admin</span>
+                        </p>
+                        <!--<p>
+                            <span class="comments">6</span>
+                        </p>-->
+                    </div>
+                    <div class="col-md-8">
+                        <p>
+                            <span class="calendar">12.06.2014</span>
+                        </p>
+                        <p>Некоторые страны создали кошачье кафе для тех, кто не может себе позволит кошку дома</p>
+                        <p>
+                            <a href="koshache-kafe.html" class="btn btn-primary btn-sm" >Далее »</a>
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="information-articles">
+                        <span class="tags">Кошачье-кафе, кошки, время, интересно</span>
+                    </div>	<a href="poverya-syeveriya-primety-svyazannye-s-koshkami.html"><h4>Поверья, приметы и суеверия про кошек</h4></a>
+                    <div class="col-md-3">
+                        <p>
+                            <img src="https://pp.vk.me/c319826/v319826015/ad/soqmrRyUSHc.jpg" alt="Поверья, приметы и суеверия про кошек" title="Поверья, приметы и суеверия про кошек" class="img-thumbnail">
+                        </p>
+                        <p>
+                            <span class="autor">Admin</span>
+                        </p>
+                        <!--<p>
+                            <span class="comments">6</span>
+                        </p>-->
+                    </div>
+                    <div class="col-md-8">
+                        <p>
+                            <span class="calendar">10.06.2014</span>
+                        </p>
+                        Мистическое, таинственное, независимое животное - кошка. Суеверия и поверья о кошках
+                        <p>
+                            <a href="poverya-syeveriya-primety-svyazannye-s-koshkami.html" class="btn btn-primary btn-sm" >Далее »</a>
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="information-articles">
+                        <span class="tags">Поверья, суеверия, приметы, спит</span>
+                    </div>	<a href="kak-myt-koshky.html"><h4>Как правильно помыть кошку, мытье кошки в домашних условиях</h4></a>
+                    <div class="col-md-3">
+                        <p>
+                            <img src="http://cs540100.vk.me/c620318/v620318015/7ca1/ODhn_PbKMfk.jpg" alt="Как правильно помыть кошку, мытье кошки в домашних условиях" title="Как правильно помыть кошку, мытье кошки в домашних условиях" class="img-thumbnail">
+                        </p>
+                        <p>
+                            <span class="autor">Admin</span>
+                        </p>
+                        <!--<p>
+                            <span class="comments">6</span>
+                        </p>-->
+                    </div>
+                    <div class="col-md-8">
+                        <p>
+                            <span class="calendar">02.06.2014</span>
+                        </p>
+                        <p>Как правильно помыть кошку. Помывка кошки  в домашних условиях, необходимые предосторожности</p>
+                        <p>
+                            <a href="kak-myt-koshky.html" class="btn btn-primary btn-sm" >Далее »</a>
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="information-articles">
+                        <span class="tags">Кошка, помывка, мытье</span>
+                    </div>	<a href="znachenie-cveta-shersti-koshki.html"><h4>Какого цвета ваш котенок? Значение окраса кошки</h4></a>
+                    <div class="col-md-3">
+                        <p>
+                            <img src="https://pp.vk.me/c620726/v620726015/51eb/zy-gN6dLV2s.jpg" alt="Какого цвета ваш котенок? Значение окраса кошки" title="Какого цвета ваш котенок? Значение окраса кошки" class="img-thumbnail">
+                        </p>
+                        <p>
+                            <span class="autor">Admin</span>
+                        </p>
+                        <!--<p>
+                            <span class="comments">6</span>
+                        </p>-->
+                    </div>
+                    <div class="col-md-8">
+                        <p>
+                            <span class="calendar">21.05.2014</span>
+                        </p>
+                        <p>У каждого из нас в семье есть кошки, наши любимые домашние котятки. Давайте узнаем, значение окраса нашей кошки.</p>
+                        <p>
+                            <a href="znachenie-cveta-shersti-koshki.html" class="btn btn-primary btn-sm" >Далее »</a>
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="information-articles">
+                        <span class="tags">Кошки, раскраска, цвет, обозначение</span>
+                    </div>	<a href="vechnaya-pamyat-koshkam.html"><h4>Вечная память Ярославским кошкам, которые спасли Ленинград</h4></a>
+                    <div class="col-md-3">
+                        <p>
+                            <img src="https://pp.vk.me/c617916/v617916015/b782/RTlEteDUSdk.jpg" alt="Вечная память Ярославским кошкам, которые спасли Ленинград" title="Вечная память Ярославским кошкам, которые спасли Ленинград" class="img-thumbnail">
+                        </p>
+                        <p>
+                            <span class="autor">Admin</span>
+                        </p>
+                        <!--<p>
+                            <span class="comments">6</span>
+                        </p>-->
+                    </div>
+                    <div class="col-md-8">
+                        <p>
+                            <span class="calendar">13.05.2014</span>
+                        </p>
+                        Вечная память кошкам. Наши спасители - Кошки. Расскажем вам, как Ярославские кошки спасли Ленинград
+                        <p>
+                            <a href="vechnaya-pamyat-koshkam.html" class="btn btn-primary btn-sm" >Далее »</a>
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="information-articles">
+                        <span class="tags">Память, вечная, спасли, интересно</span>
+                    </div>
+
+                    <div class="pagination">
+                        <span class='ditto_currentpage'>1</span><a class='ditto_page' href='/articles.html?start=5'>2</a><a class='ditto_page' href='/articles.html?start=10'>3</a><a class='ditto_page' href='/articles.html?start=15'>4</a><a class='ditto_page' href='/articles.html?start=20'>5</a><a class='ditto_page' href='/articles.html?start=25'>6</a>
+                    </div>
+                </div>
             </div>
             <div class="col-md-3">
-				<h4>Категории</h4>
-				<ul class="list-unstyled categories-list-r">
-					<li><a href="">Питание</a></li>
-					<li><a href="">Поведение</a></li>
-				</ul>
-            </div>
-        </div>
-		<hr class="featurette-divider">
-    </div><!-- /.container -->
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="row">
-            <div class="col-md-4">
-                <ul class="nav nav-pills">
-                    <li class="active"><a href="#">Главная</a></li>
-                    <li><a href="#">Статьи</a></li>
-                    <li><a href="#">О кошках</a></li>
-                    <li><a href="#">FAQ</a></li>
+                <h4>Навигация</h4>
+                <ul class="list-unstyled categories-list-r">
+                    <li><a href="pochemy-koshki-lubyat-ybivat.html">Почему кошки любят убивать?</a></li><li><a href="pochemy-koshki-lubyat-pit-vody-iz-miski-ryadom-s-kormom.html">Почему кошки не любят пить воду из миски рядом с едой?</a></li><li><a href="pochemy-koshki-perenimaut-privichki-hozyaev.html">Почему кошки перенимают привычки и повадки хозяев?</a></li><li><a href="podgotovka-k-pokypke-kotenka.html">Список необходимых средств для подготовки к покупке котенка</a></li><li><a href="zdorove-vashey-koshki.html">Здоровье вашей кошки</a></li><li><a href="koshki-na-ylice.html">Домашняя кошка на улице</a></li><li><a href="pochemy-koshka-spit-na-cheloveke.html">Почему кошка спит на человеке?</a></li><li><a href="pochemy-koty-takie-zhivychie.html">Почему кошки такие живучие?</a></li><li><a href="mikrochipy-i-koshka.html">Микрочип для кошек</a></li><li><a href="pochemy-koshki-topchytsya.html">Немного о кошках и почему кошки топчутся?</a></li><li><a href="vybor-koshki-i-porody.html">Выбираем кошку, какая порода кошки подойдет вам больше</a></li><li><a href="pochemy-govoryan-y-koshki-9-zhizney.html">Почему говорят «У кошки девять жизней»?</a></li><li><a href="nashi-lubimye-koshki-na-dachnom-uchastke.html">Любимые "Кошки" на нашем дачном участке или как отпугнуть кошек с грядок</a></li><li><a href="neporodistye-koshki.html">Непородистые кошки и котята</a></li><li><a href="kak-koshki-vidyat.html">Как кошки видят в темноте</a></li><li><a href="novorozhdenniy-rebenok-i-koshka.html">Новорожденный ребенок и кошка</a></li><li><a href="sobiraem-koshky-v-dorogy-ili-koshka-edet-na-dachy.html">Собираем кошку в дорогу, кошка едет на дачу, кошка на даче, кошка собирается на дачу</a></li><li><a href="pochemy-koshek-nado-sterilizovat.html">Почему кошек надо стерилизовать</a></li><li><a href="pochemy-v-nekotoryh-stranah-koshki-mogut-poluchit-pensiu.html">Почему в некоторых странах кошки могут получить пенсию?</a></li><li><a href="pochemy-koshka-namerenno-ignoriryet.html">Почему ваша кошка намеренно вас игнорирует?</a></li><li><a href="bezopasniy-dom-dlya-koshki.html">Безопасный дом для кошки или кошка в доме</a></li><li><a href="vechnaya-pamyat-koshkam.html">Вечная память Ярославским кошкам, которые спасли Ленинград</a></li><li><a href="znachenie-cveta-shersti-koshki.html">Какого цвета ваш котенок? Значение окраса кошки</a></li><li><a href="kak-myt-koshky.html">Как правильно помыть кошку, мытье кошки в домашних условиях</a></li><li><a href="poverya-syeveriya-primety-svyazannye-s-koshkami.html">Поверья, приметы и суеверия про кошек</a></li><li><a href="koshache-kafe.html">Кошачьи кафе для любителей кошек</a></li>
                 </ul>
             </div>
-            <div class="col-md-4 soc">
-                <a href="" class="twitter"></a>
-                <a href="" class="facebook"></a>
-                <a href="" class="google"></a>
-                <a href="" class="rss"></a>
-            </div>
-            <div class="col-md-4">
-                <p>&copy; 2013 &middot; Angel</p>
-            </div>
         </div>
-    </footer>
+        <hr class="featurette-divider">
+    </div><!-- /.container -->
 
 </div><!-- /.wrapper -->
-  </body>
+<!-- FOOTER -->
+<footer>
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="nav nav-pills"><li >
+                <a href="http://kittens-world.ru/" title="Добро пожаловать на наш сайт о кошках и котятах">Главная</a>
+            </li>
+                <li >
+                    <a href="/gallery.html" title="Фотогалерея про кошек и котят">Фотогалерея</a>
+                </li>
+                <li  class="active">
+                    <a href="/articles.html" title="Интересные статьи про кошек">Статьи</a>
+                </li>
+                <li >
+                    <a href="/video.html" title="Забавные видеоролики с кошками (про кошек)">Видео</a>
+                </li>
+                <li  class="last">
+                    <a href="/faq.html" title="Вопрос-ответ FAQ">FAQ</a>
+                </li>
+            </ul>
+
+        </div>
+        <div class="col-md-4 soc">
+            <!--<a href="" class="twitter"></a>
+            <a href="" class="facebook"></a>-->
+            <a href="https://plus.google.com/+KittensworldRunya/posts" class="google" target="_blank"></a>
+            <a href="https://vk.com/kittens_world" class="vk" target="_blank"></a>
+            <a href="http://kittens-world.ru/feed.rss" class="rss" target="_blank"></a>
+        </div>
+        <div class="col-md-4">
+            <p>2013 - 2014 &middot;  &copy; Angel</p>
+        </div>
+    </div>
+    <div class="counter">
+    </div> <!-- /.counter -->
+</footer>
+</body>
 </html>

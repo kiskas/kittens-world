@@ -1,9 +1,5 @@
-﻿$(function () {
-
-   //last-child
-//    $('li:last-child').css('border', 'none');
-
-    // placeholder in ie
-    jQuery('input[placeholder], textarea[placeholder]').placeholder();
-
+$(function () {
+    var catsTool = new window.CatsTool({
+        el: $('.cats-age-widget')
+    });
 });
