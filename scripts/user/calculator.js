@@ -9,13 +9,14 @@
         if (!options || this.el) {
             return {};
         }
-        
+
         var location = window.location.host;
         if (location.indexOf('kittens-world.ru') === -1) {
-            window.location.href = 'http://kittens-world.ru/';
+            //window.location.href = 'http://kittens-world.ru/';
         }
 
-        this.ageDeclension = ['год', 'года', 'лет'];
+        this.ageDeclension = ['аКаОбаАбаИаЙ аГаОаД', 'аКаОбаАббаИб аГаОаДаА', 'аКаОбаАббаИб аЛаЕб'];
+        this.monthDeclension = ['аМаЕббб', 'аМаЕбббаА', 'аМаЕбббаЕаВ'];
         this.el = options.el;
 
         this.el.find('.calc-age').on('click', $.proxy(this.drawCatAge, this));
@@ -41,8 +42,11 @@
                 return 0;
             }
 
-            if (age < 0 && month > 0) {
-                result = this.getFullAge(0, month * 15);
+            if (age === 0 && month > 0) {
+                bufferAge = this.toYearFromMonth(month * 15);
+                month = bufferAge.month;
+                age += bufferAge.year;
+                result = this.getFullAge(age, month);
             } else if (age === 1) {
                 bufferAge = this.toYearFromMonth(month * 10);
                 month = bufferAge.month;
@@ -62,7 +66,7 @@
 
         drawCatAge: function () {
             var age = this.calculate(),
-                resultEl = this.el.find('.age-result'),
+                resultEl = this.el.find('.age-result .alert'),
                 fillerEl = this.el.find('.age-background'),
                 height = (255 / 100) * this.fullMonthCount * (100 / (117 * 12));
 
@@ -72,18 +76,20 @@
             fillerEl.animate({
                 height: height
             }, 1000, function () {
-                resultEl.text("Вашей кошке " + age).removeClass('hidden');
+                resultEl.text("ааАбаЕаЙ аКаОбаКаЕ " + age).removeClass('hidden');
             });
         },
 
         getFullAge: function (year, month) {
             var result;
             if (year === 0) {
-                result = month + ' мес.';
+                result = this.getDeclension(month, this.monthDeclension);
             } else if (month === 0) {
-                result = this.ageDeclensions(year);
+                result = this.getDeclension(year, this.ageDeclension);
             } else {
-                result = this.ageDeclensions(year) + ' ' + month + ' мес.';
+                result = this.getDeclension(year, this.ageDeclension) +
+                    ' ' +
+                    this.getDeclension(month, this.monthDeclension);
             }
             return result;
         },
@@ -95,17 +101,24 @@
             return { year : year, month: month };
         },
 
-        ageDeclensions:  function (age) {
-            var desclension = '',
-                lastGrade = (age % 10);
+        /**
+         * Create phrase with some number, where you use declension
+         * @param number Some number for declension
+         * @param declension Array of declension
+         * @returns {string} Return phrase, with declension
+         */
+        getDeclension:  function (number, declension) {
+            var currentDeclension,
+                degree = number.toString().length - 1 || 1,
+                lastGrade = (number % Math.pow(10, degree));
             if (lastGrade === 1) {
-                desclension = this.ageDeclension[0];
-            } else if (lastGrade > 1 && lastGrade <= 3) {
-                desclension = this.ageDeclension[1];
+                currentDeclension = declension[0];
+            } else if (lastGrade > 1 && lastGrade < 5) {
+                currentDeclension = declension[1];
             } else {
-                desclension = this.ageDeclension[2];
+                currentDeclension = declension[2];
             }
-            return age + ' ' + desclension;
+            return number + ' ' + currentDeclension;
         }
     };
 
