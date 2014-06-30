@@ -540,7 +540,7 @@ a.carousel-control  {
 .article ul,
 .article ol {
     margin-left: 20px;
-    overflow: hidden;
+   /* overflow: hidden;*/
 }
 
 .col-md-3 img {
