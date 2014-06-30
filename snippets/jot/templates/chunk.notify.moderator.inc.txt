@@ -1,0 +1,19 @@
+Уважаемый(ая) [+recipient.username+],
+
+Появился новый комментарий в теме, которую вы моделируете.
+
+-----
+Имя: [+comment.custom.name+]
+Email: [+comment.custom.email+] 
+Тема: [+comment.title+]
+Сообщение:
+
+[+comment.content+]
+-----
+
+Посмотрите опубликованые ответы: [+siteurl+][+jot.link.view+][+jot.querykey.view+]=1
+Посмотрите не опубликованные ответы: [+siteurl+][+jot.link.view+][+jot.querykey.view+]=0
+
+С Уважением,
+Site Administrator
+

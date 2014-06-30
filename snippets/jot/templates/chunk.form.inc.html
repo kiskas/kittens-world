@@ -1,0 +1,94 @@
+<a name="jf[+jot.link.id+]"></a>
+<div class="jot-list">
+	<ul>
+		<li>Поля отмеченные <b>*</b> обязательные для заполнения.</li>
+	</ul>
+</div>
+[+form.error:isnt=`0`:then=`
+<div class="jot-err">
+[+form.error:select=`
+&-3=Вы пытаетесь повторно отправить один и тот же комментарий. Вы вероятно обновили страницу.
+&-2=Ваш комментарий был отклонен.
+&-1=Ваш комментарий отправлен. После проверки модерации он будет опубликован.
+&1=Вы пытаетесь повторно отправить один и тот же комментарий. Вы вероятно обновили страницу.
+&2=Код безопасности, который Вы ввели,неправильный.
+&3=Вы можете опубликовать один раз каждые [+jot.postdelay+] секунд.
+&4=Ваш комментарий был отклонен.
+&5=[+form.errormsg:ifempty=`Вы не заполнели все обязательные поля`+]
+`+]
+</div>
+`:strip+]
+[+form.confirm:isnt=`0`:then=`
+<div class="jot-cfm">
+[+form.confirm:select=`
+&1=Ваш комментарий был опубликован.
+&2=Ваш комментарий отправлен. После проверки модерации он будет опубликован.
+&3=Комментарий сохранен.
+`+]
+</div>
+`:strip+]
+<div id="question">
+	<div class="form-question">
+		<form method="post" action="[+form.action:esc+]#jf[+jot.link.id+]" class="jot-form" role="form">
+			<fieldset>
+			<input name="JotForm" type="hidden" value="[+jot.id+]" />
+			<input name="JotNow" type="hidden" value="[+jot.seed+]" />
+			<input name="parent" type="hidden" value="[+form.field.parent+]" />
+			
+			[+form.moderation:is=`1`:then=`
+				<div class="jot-row">
+					<b>Созданный на:</b> [+form.field.createdon:date=`%a %B %d, %Y at %H:%M`+]<br />
+					<b>Созданный:</b> [+form.field.createdby:userinfo=`username`:ifempty=`[+jot.guestname+]`+]<br />
+					<b>IP адрес:</b> [+form.field.secip+]<br />
+					<b>Опубликовать:</b> [+form.field.published:select=`0=Нет&1=Да`+]<br />
+					[+form.field.publishedon:gt=`0`:then=`
+						<b>Опубликован на:</b> [+form.field.publishedon:date=`%a %B %d, %Y at %H:%M`+]<br />
+						<b>Опубликованный:</b> [+form.field.publishedby:userinfo=`username`:ifempty=` - `+]<br />
+					`+]
+					[+form.field.editedon:gt=`0`:then=`
+						<b>Отредактированный на:</b> [+form.field.editedon:date=`%a %B %d, %Y at %H:%M`+]<br />
+						<b>Отредактированный:</b> [+form.field.editedby:userinfo=`username`:ifempty=` -`+]<br />
+					`+]
+				</div>
+			`:strip+]
+			
+			[+form.guest:is=`1`:then=`
+				<div class="question-input">
+					<label for="name[+jot.id+]">
+						<input tabindex="[+jot.seed:math=`?+1`+]" name="name" type="text" size="40" placeholder="Имя" value="[+form.field.custom.name:esc+]" id="name[+jot.id+]" class="text form-control"/>
+					</label>
+				</div>
+				<div class="question-input">
+					<label for="email[+jot.id+]">
+						<input tabindex="[+jot.seed:math=`?+2`+]" name="email" type="text" size="40" placeholder="Email" value="[+form.field.custom.email:esc+]" id="email[+jot.id+]" class="form-control"/>
+					</label>
+				</div>
+			`:strip+]
+			
+			<div class="question-input">
+				<label for="title[+jot.id+]">
+					<input tabindex="[+jot.seed:math=`?+3`+]" name="title" type="text" placeholder="Тема" size="40" value="[+form.field.title:esc+]" id="title[+jot.id+]" class="form-control"/>
+				</label>
+			</div>
+			<div class="question-textarea">
+				<label for="content[+jot.id+]">
+					<textarea tabindex="[+jot.seed:math=`?+4`+]" name="content" cols="50" placeholder="Комментарий* " rows="8" id="content[+jot.id+]" class="form-control">[+form.field.content:esc+]</textarea>
+				</label>
+			</div>
+			
+		  [+jot.captcha:is=`1`:then=`
+				<div style="width:150px;margin-top: 5px;margin-bottom: 5px;"><a href="[+jot.link.current:esc+]"><img src="[(base_url)]manager/includes/veriword.php?rand=[+jot.seed+]" width="148" height="60" alt="If you have trouble reading the code, click on the code itself to generate a new random code." style="border: 1px solid #003399" /></a></div>
+				<label for="vericode[+jot.id+]">Help prevent spam - enter security code above:<br /><input type="text" name="vericode" style="width:150px;" size="20" id="vericode[+jot.id+]" /></label>&nbsp;
+			`:strip+]
+			
+			<div style="float:right;width: 100px;"></div>
+			<div class="buttom">
+				<input tabindex="[+jot.seed:math=`?+5`+]" name="submit" class="button btn btn-primary " type="submit" value="[+form.edit:is=`1`:then=`Сохранить комментарий`:else=`Опубликовать`+]" />
+				[+form.edit:is=`1`:then=`
+					<input tabindex="[+jot.seed:math=`?+5`+]" name="submit" type="submit" class="button" value="Отмена" onclick="history.go(-1);return false;" />
+				`+] 
+			</div>
+			</fieldset>
+		</form>
+	</div>
+</div>

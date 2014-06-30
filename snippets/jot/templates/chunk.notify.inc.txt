@@ -1,0 +1,11 @@
+Уважаемый(ая) [+recipient.username+],
+
+Добавлен ответ в тему, которую вы смотрели.
+
+Посмотрите ответ: [+siteurl+][+jot.link.current+]
+
+Чтобы отказаться от подписки к этой теме, нажмите: [+siteurl+][+jot.link.unsubscribe+].
+
+С Уважением,
+Site Administrator
+

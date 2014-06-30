@@ -1,0 +1,21 @@
+Уважаемый(ая) [+recipient.fullname+],
+
+Новый комментарий был добавлен в вашу тему:
+"[+jot.title+]"
+
+-----
+Имя: [+comment.custom.name+]
+Email: [+comment.custom.email+] 
+Тема: [+comment.title+]
+Сообщение:
+
+[+comment.content+]
+-----
+
+Посмотрите опубликованные комментарии: [+siteurl+][+jot.link.view+][+jot.querykey.view+]=1
+Посмотрите не опубликованные комментарии: [+siteurl+][+jot.link.view+][+jot.querykey.view+]=0
+(You must log in first)
+
+С Уважением,
+Site Administrator
+

@@ -1,0 +1,47 @@
+	<a name="jc[+jot.link.id+][+comment.id+]"></a>
+	<div class="jot-row form-control [+chunk.rowclass+] [+comment.published:is=`0`:then=`jot-row-up`+]">
+	 <div class="jot-comment">
+ 		 
+		 <div class="jot-user">
+		 <div class="img-comment"></div>
+		 [+comment.createdby:isnt=`0`:then=`<b>`+][+comment.createdby:userinfo=`username`:ifempty=`[+comment.custom.name:ifempty=`[+jot.guestname+]`:esc+]`+][+comment.createdby:isnt=`0`:then=`</b>`+]
+		 </div> 
+		
+		 <div class="jot-content">
+			 
+			 <div class="jot-posticon">
+					[+phx:userinfo=`lastlogin`:ifempty=`9999999999`:lt=`[+comment.createdon+]`:then=`
+				 <img src="[(base_url)]assets/snippets/jot/templates/comment.gif" width="16" height="16" alt="Новый комментарий" border="0" />
+				 `:else=`
+				 <img src="[(base_url)]assets/snippets/jot/templates/comment_trans.gif" width="16" height="16" alt="Комментарий" border="0" />
+				 `:strip+]
+			 </div>		 
+			 
+			 <div class="jot-mod">
+			 [+jot.moderation.enabled:is=`1`:then=`
+				<a href="[+jot.link.delete:esc+][+jot.querykey.id+]=[+comment.id+]#jotmod[+jot.link.id+]" onclick="return confirm('Вы уверены, что хотите удалить этот комментарий?')" title="Удалить комментарий"><img src="[(base_url)]assets/snippets/jot/templates/delete.gif" width="16" height="16" alt="Удалить комментарий" border="0" /></a>
+				[+comment.published:is=`0`:then=`
+				<a href="[+jot.link.publish:esc+][+jot.querykey.id+]=[+comment.id+]#jotmod[+jot.link.id+]" onclick="return confirm('Вы уверены, что хотите опубликовать этот комментарий?')" title="Опубликовать комментарий"><img src="[(base_url)]assets/snippets/jot/templates/publish.png" width="16" height="16" alt="Опубликовать комментарий" border="0" /></a>
+				`+]
+				[+comment.published:is=`1`:then=`
+				<a href="[+jot.link.unpublish:esc+][+jot.querykey.id+]=[+comment.id+]#jotmod[+jot.link.id+]" onclick="return confirm('Вы уверены, что хотите не опубликовывать этот комментарий?')" title="Не опубликовавыть комментарий"><img src="[(base_url)]assets/snippets/jot/templates/unpublish.png" width="16" height="16" alt="Не опубликовавыть комментарий" border="0" /></a>
+				`+]
+			 `:strip+]
+			 [+jot.user.canedit:is=`1`:and:if=`[+comment.createdby+]`:is=`[+jot.user.id+]`:or:if=`[+jot.moderation.enabled+]`:is=`1`:then=`
+				 <a href="[+jot.link.edit:esc+][+jot.querykey.id+]=[+comment.id+]#jf[+jot.link.id+]" onclick="return confirm('Вы уверены, что хотите отредактировать этот коммментарий?')" title="Редактировать комментарий"><img src="[(base_url)]assets/snippets/jot/templates/edit.gif" width="16" height="16" alt="Редактировать комментарий" border="0" /></a>
+   		 `:strip+]
+			 </div>	
+			  
+			 <span class="jot-subject">[+comment.title:limit:esc+]</span><br />
+			 
+			 <hr />
+			 <div class="jot-message">[+comment.content:wordwrap:esc:nl2br+]</div>
+			 <div class="jot-extra">
+			 <span class="jot-poster"><b>[+comment.createdon:date=`%B %d, %Y`+]</b></span>
+			 
+			 </div>
+		 </div>
+		 
+	 </div>
+	
+	</div>
