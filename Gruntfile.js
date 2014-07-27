@@ -22,7 +22,7 @@ module.exports = function(grunt) {
                 separator: ';'
             },
             basic: {
-                src: ['scripts/user/*.js'],
+                src: ['scripts/user/config.js', 'scripts/user/calculator.js', 'scripts/user/main.js'],
                 dest: 'build/release.min.js'
             },
             extras: {
