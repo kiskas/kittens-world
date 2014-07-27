@@ -26,7 +26,7 @@ module.exports = function(grunt) {
                 dest: 'build/release.min.js'
             },
             extras: {
-                src: ['jquery-1.8.3.min.js', 'scripts/lib/bootstrap.min.js', 'holder.js'],
+                src: ['scripts/lib/jquery-1.8.3.min.js', 'scripts/lib/bootstrap.min.js', 'scripts/lib/holder.js'],
                 dest: 'build/libs.min.js'
             }
         },
