@@ -15,8 +15,8 @@
             //window.location.href = 'http://kittens-world.ru/';
         }
 
-        this.ageDeclension = ['аКаОбаАбаИаЙ аГаОаД', 'аКаОбаАббаИб аГаОаДаА', 'аКаОбаАббаИб аЛаЕб'];
-        this.monthDeclension = ['аМаЕббб', 'аМаЕбббаА', 'аМаЕбббаЕаВ'];
+        this.ageDeclension = ['кошачий год', 'кошачьих года', 'кошачьих лет'];
+        this.monthDeclension = ['месяц', 'месяца', 'месяцев'];
         this.el = options.el;
 
         this.el.find('.calc-age').on('click', $.proxy(this.drawCatAge, this));
@@ -61,14 +61,35 @@
                 result = this.getFullAge(age, month);
             }
             this.fullMonthCount = age * 12 + month;
+            this.fullAgeCount = age;
             return result;
+        },
+
+        /**
+         * Get description from config with cat age
+         * @returns {string} description
+         */
+        getDescription: function () {
+            var cfgLength = calcConfig.length,
+                i;
+            if (cfgLength === 0) {
+                return;
+            }
+
+            for (i = 0; i < cfgLength; i += 1) {
+                if (this.fullAgeCount <= calcConfig[i].age) {
+                    return calcConfig[i].text;
+                }
+            }
         },
 
         drawCatAge: function () {
             var age = this.calculate(),
-                resultEl = this.el.find('.age-result .alert'),
+                resultEl = this.el.find('.age-result'),
                 fillerEl = this.el.find('.age-background'),
-                height = (255 / 100) * this.fullMonthCount * (100 / (117 * 12));
+                height = (255 / 100) * this.fullMonthCount * (100 / (117 * 12)),
+                description = this.getDescription();
+
 
             if (age === 0) {
                 return;
@@ -76,7 +97,8 @@
             fillerEl.animate({
                 height: height
             }, 1000, function () {
-                resultEl.text("ааАбаЕаЙ аКаОбаКаЕ " + age).removeClass('hidden');
+                resultEl.find('.alert').text("Вашей кошке " + age).removeClass('hidden');
+                resultEl.find('.age-result-text').html(description);
             });
         },
 
