@@ -436,11 +436,11 @@ text-decoration: none;
 	padding-top: 50px;
 }
 		
-.navbar-collapse.in .nav.navbar-nav,
+/*.navbar-collapse.in .nav.navbar-nav,
 .navbar-collapse.in .navbar-form	{
 	padding-top: 10px 15px;
 }
-	
+	*/
 .caret	{
 	border-width: 7px 6px 0;
 	cursor: pointer;
