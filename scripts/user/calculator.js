@@ -12,7 +12,7 @@
 
         var location = window.location.host;
         if (location.indexOf('kittens-world.ru') === -1) {
-            //window.location.href = 'http://kittens-world.ru/';
+            window.location.href = 'http://kittens-world.ru/';
         }
 
         this.ageDeclension = ['кошачий год', 'кошачьих года', 'кошачьих лет'];
