@@ -233,10 +233,10 @@ font-size: 150px; text-align: center; padding: 50px;
 
 .content-inner .content .menu-container {
 	background: url('../images/hr.jpg') repeat-x bottom center #fff;
-    height: 125px;
+    height: 102px;
     position: fixed;
     width: 100%;
-    z-index: 9999;
+    z-index: 1000;
 }
 
 .content-inner .marketing {
@@ -422,7 +422,7 @@ text-decoration: none;
 }
 
 .navbar-toggle	{
-	margin-top: 60px;
+	margin-top: 45px;
 }
 
 .navbar-default .navbar-collapse.in .navbar-nav > li:hover,
@@ -433,7 +433,7 @@ text-decoration: none;
 	
 .navbar-collapse.collapse .nav.navbar-nav,
 .navbar-collapse.collapse .navbar-form	{
-	padding-top: 50px;
+	padding-top: 35px;
 }
 		
 /*.navbar-collapse.in .nav.navbar-nav,
@@ -643,6 +643,37 @@ footer .nav > li > a {
 	footer .nav > li > a {
 		padding: 10px;
 	}
+
+    .nav > li > a {
+        padding: 10px 10px 5px 10px;
+    }
+
+    .navbar-default .navbar-nav > li.active {
+        background: url('../images/menu-act.jpg') no-repeat center bottom;
+    }
+
+    .navbar-default .navbar-nav > li {
+        height: 50px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .nav > li > a {
+        padding: 10px 10px 5px 10px;
+    }
+
+    .navbar-default .navbar-nav > li.active {
+        background: url('../images/menu-act.jpg') no-repeat center bottom;
+    }
+
+    .navbar-default .navbar-nav > li {
+        height: 50px;
+    }
+
+    .navbar-collapse.collapse .navbar-form  {
+        padding-top: 0;
+    }
 }
 
 
